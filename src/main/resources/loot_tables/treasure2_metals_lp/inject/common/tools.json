@@ -1,6 +1,6 @@
 {
 	"version": "1.0",
-	"category": "general",
+	"categories": ["general"],
 	"pools": [
 		{
 			"name": "common_tools",

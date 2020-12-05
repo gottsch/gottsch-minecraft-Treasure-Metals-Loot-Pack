@@ -11,24 +11,33 @@ import com.someguyssoftware.gottschcore.config.IConfig;
 import com.someguyssoftware.gottschcore.mod.AbstractMod;
 import com.someguyssoftware.gottschcore.mod.IMod;
 import com.someguyssoftware.gottschcore.version.BuildVersion;
-import com.someguyssoftware.treasure2.eventhandler.WorldEventHandler;
+import com.someguyssoftware.treasure2.Treasure;
+import com.someguyssoftware.treasure_metals_lootpack.eventhandler.WorldEventHandler;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerAboutToStartEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.event.FMLServerStoppingEvent;
 
 /**
  * @author Mark Gottschling on Dec 3, 2020
  *
  */
-@Mod(modid = ModApp.MODID, name = ModApp.NAME, version = ModApp.VERSION, dependencies = "required-after:gottschcore@[1.13.0,)", acceptedMinecraftVersions = "[1.12.2]", updateJSON = ModApp.UPDATE_JSON_URL)
+@Mod(modid = ModApp.MODID, 
+name = ModApp.NAME, 
+version = ModApp.VERSION, 
+dependencies = "required-after:gottschcore@[1.13.0,);required-after:treasure2@[1.13.1,)", 
+acceptedMinecraftVersions = "[1.12.2]", 
+updateJSON = ModApp.UPDATE_JSON_URL)
 @Credits(values = { "Treasure2: Metals Loot Pack was first developed by Mark Gottschling on Dec 3, 2020."})
 public class ModApp extends AbstractMod {
 	// constants
 	public static final String MODID = "treasure2_metals_lp";
-	protected static final String NAME = "Treasure2 Metals LP";
+	protected static final String NAME = "Treasure2MetalsLP";
 	protected static final String VERSION = "1.0.0";
 
 	public static final String UPDATE_JSON_URL = "https://raw.githubusercontent.com/gottsch/gottsch-minecraft-Treasure/master/update.json";
@@ -43,14 +52,14 @@ public class ModApp extends AbstractMod {
 
 	@Instance(value = ModApp.MODID)
 	public static ModApp instance;
-	
+
 	/**
 	 * 
 	 */
 	public ModApp() {
-		
+
 	}
-	
+
 	/**
 	 * 
 	 * @param event
@@ -59,11 +68,29 @@ public class ModApp extends AbstractMod {
 	@EventHandler
 	public void preInt(FMLPreInitializationEvent event) {
 		super.preInt(event);
-		
+
 		// register additional events
 		MinecraftForge.EVENT_BUS.register(new WorldEventHandler(getInstance()));
+		
+		// TODO create an log appender and attach it to Treasure2's logger
 	}
-	
+
+	@Mod.EventHandler
+	public void serverStarting(final FMLServerStartingEvent event) {
+		Treasure.logger.debug("Server Starting event...");
+	}
+
+	@Mod.EventHandler
+	public void serverAboutToStart(FMLServerAboutToStartEvent event) {
+		Treasure.logger.debug("Server AboutToStart event...");
+	}
+
+
+	@Mod.EventHandler
+	public void serverStopping(FMLServerStoppingEvent event) {
+		Treasure.logger.debug("Server Stopping event...");
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
