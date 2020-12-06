@@ -1,0 +1,34 @@
+{
+	"version": "1.0",
+	"categories": ["tools"],
+	"pools": [
+		{
+			"name": "sgs_metals_scarce_tools",
+			"rolls": {
+				"min": 1,
+				"max": 2
+			},
+			"bonus_rolls": 0.25,
+			"entries": [
+				{
+					"entryName": "steel_sword",
+					"type": "item",
+					"name": "sgs_metals:steel_sword",
+					"weight": 10
+				},	
+				{
+					"entryName": "steel_pickaxe",
+					"type": "item",
+					"name": "sgs_metals:steel_pickaxe",
+					"weight": 12
+				},
+				{
+					"entryName": "steel_axe",
+					"type": "item",
+					"name": "sgs_metals:steel_axe",
+					"weight": 12
+				}
+			]
+		}
+	]
+}

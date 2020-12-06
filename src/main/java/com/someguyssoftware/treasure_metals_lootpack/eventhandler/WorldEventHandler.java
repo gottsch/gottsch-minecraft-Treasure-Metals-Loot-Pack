@@ -7,7 +7,7 @@ import com.someguyssoftware.gottschcore.mod.IMod;
 import com.someguyssoftware.gottschcore.world.WorldInfo;
 import com.someguyssoftware.treasure2.Treasure;
 import com.someguyssoftware.treasure2.loot.TreasureLootTableRegistry;
-import com.someguyssoftware.treasure_metals_lootpack.ModApp;
+import com.someguyssoftware.treasure_metals_lootpack.TreasureMetalsLP;
 
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.Loader;
@@ -42,9 +42,7 @@ public class WorldEventHandler {
 		 */
 		if (WorldInfo.isServerSide(event.getWorld()) && event.getWorld().provider.getDimension() == 0) {
 			// register mod's loot tables with the LootTableMaster
-//			if (Loader.isModLoaded(Treasure.MODID)) {
-				TreasureLootTableRegistry.register(mod.getId());
-//			}
+			TreasureLootTableRegistry.register(mod.getId());
 		}	
 	}
 	
