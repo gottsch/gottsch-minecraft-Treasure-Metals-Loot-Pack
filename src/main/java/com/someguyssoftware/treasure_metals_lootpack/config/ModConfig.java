@@ -8,8 +8,16 @@ import com.someguyssoftware.gottschcore.config.IConfig;
 import com.someguyssoftware.treasure_metals_lootpack.TreasureMetalsLP;
 
 import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.Config.Comment;
 import net.minecraftforge.common.config.Config.Ignore;
+import net.minecraftforge.common.config.Config.Name;
 import net.minecraftforge.common.config.Config.Type;
+import net.minecraftforge.common.config.ConfigManager;
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.config.Property;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 /**
  * @author Mark Gottschling on Dec 4, 2020
@@ -23,27 +31,27 @@ public class ModConfig implements IConfig {
     
 	@Comment({"Enables/Disables mod."})
 	@Name("01. Enable the mod:")
-	public boolean enabled = true;
+	public static boolean enabled = true;
 	
 	@Comment({"The directory where mods are located.", "This is relative to the Minecraft install path."})
 	@Name("02. Mods folder:")
-	public String folder = "mods";
+	public static String folder = "mods";
 	
 	@Comment({"The directory where configs are located.", "Resource files will be located here as well.", "This is relative to the Minecraft install path."})
 	@Name("03. Config folder:")
-	public String configFolder = "config";
+	public static String configFolder = "config";
 	
 	@Comment({"Enables/Disables version checking."})
 	@Name("04. Enable the version checker:")
-	public boolean enableVersionChecker = true;
+	public static boolean enableVersionChecker = true;
 	
 	@Comment({"The latest published version number.", "This is auto-updated by the version checker.", "This may be @deprecated."})
 	@Name("05. Latest mod version available:")
-	public String latestVersion = "";
+	public static String latestVersion = "";
 	
 	@Comment({"Remind the user of the latest version (as indicated in latestVersion proeprty) update."})
 	@Name("06. Enable latest mod version reminder:")
-	public boolean latestVersionReminder = true;
+	public static boolean latestVersionReminder = true;
     
 	@Ignore
 	public static ModConfig instance = new ModConfig();
@@ -53,7 +61,7 @@ public class ModConfig implements IConfig {
 	 */
     public ModConfig() {}
     
-    @net.minecraftforge.fml.common.Mod.EventBusSubscriber
+    @Mod.EventBusSubscriber
 	public static class EventHandler {
 		/**
 		 * Inject the new values and save to the config file when the config has been changed from the GUI.
@@ -100,7 +108,7 @@ public class ModConfig implements IConfig {
 
 	@Override
 	public void setEnableVersionChecker(boolean enableVersionChecker) {
-		enableVersionChecker = enableVersionChecker;
+		this.enableVersionChecker = enableVersionChecker;
 	}
 
 	@Override
@@ -117,5 +125,35 @@ public class ModConfig implements IConfig {
 	@Override
 	public void setLatestVersionReminder(boolean latestVersionReminder) {
 		this.latestVersionReminder = latestVersionReminder;
+	}
+
+	@Override
+	public void setForgeConfiguration(Configuration forgeConfiguration) {
+	}
+
+	@Override
+	public Configuration getForgeConfiguration() {
+		return null;
+	}
+
+	@Override
+	public void setProperty(String category, String key, boolean value) {
+	}
+
+	@Override
+	public void setProperty(String category, String key, String value) {
+	}
+
+	@Override
+	public void setProperty(Property property, String value) {
+	}
+
+	@Override
+	public String getConfigFolder() {
+		return configFolder;
+	}
+
+	@Override
+	public void setConfigFolder(String configFolder) {
 	}
 }

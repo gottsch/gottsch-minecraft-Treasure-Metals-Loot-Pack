@@ -11,6 +11,24 @@
 			"bonus_rolls": 0.25,
 			"entries": [
 				{
+					"entryName": "bone_sword",
+					"type": "item",
+					"name": "sgs_metals:bone_sword",
+					"weight": 20
+				},
+				{
+					"entryName": "bone_steel_sword",
+					"type": "item",
+					"name": "sgs_metals:bone_steel_sword",
+					"weight": 10
+				},
+				{
+					"entryName": "titanium_sword",
+					"type": "item",
+					"name": "sgs_metals:titanium_sword",
+					"weight": 5
+				},
+				{
 					"entryName": "steel_sword",
 					"type": "item",
 					"name": "sgs_metals:steel_sword",

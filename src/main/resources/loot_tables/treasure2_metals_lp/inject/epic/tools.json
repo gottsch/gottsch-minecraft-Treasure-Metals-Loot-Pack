@@ -11,7 +11,29 @@
 					"entryName": "titanium_sword",
 					"type": "item",
 					"name": "sgs_metals:titanium_sword",
-					"weight": 25,
+					"weight": 15,
+					"functions": [
+						{
+							"function": "enchant_randomly"
+						}
+					]
+				},
+				{
+					"entryName": "autium_sword",
+					"type": "item",
+					"name": "sgs_metals:autium_sword",
+					"weight": 15,
+					"functions": [
+						{
+							"function": "enchant_randomly"
+						}
+					]
+				},
+				{
+					"entryName": "titanium_sword",
+					"type": "item",
+					"name": "sgs_metals:titanium_sword",
+					"weight": 5,
 					"functions": [
 						{
 							"function": "enchant_with_levels",
@@ -24,7 +46,7 @@
 					"entryName": "autium_sword",
 					"type": "item",
 					"name": "sgs_metals:autium_sword",
-					"weight": 25,
+					"weight": 5,
 					"functions": [
 						{
 							"function": "enchant_with_levels",

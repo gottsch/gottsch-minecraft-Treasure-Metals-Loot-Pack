@@ -42,7 +42,7 @@ public class TreasureMetalsLP extends AbstractMod {
 	protected static final String NAME = "Treasure2MetalsLP";
 	protected static final String VERSION = "1.0.0";
 
-	public static final String UPDATE_JSON_URL = "https://raw.githubusercontent.com/gottsch/gottsch-minecraft-Treasure/master/update.json";
+	public static final String UPDATE_JSON_URL = "https://raw.githubusercontent.com/gottsch/gottsch-minecraft-Treasure-Metals-Loot-Pack/1.12.2-master/update.json";
 
 	private static final BuildVersion MINECRAFT_VERSION = new BuildVersion(1, 12, 2);
 
