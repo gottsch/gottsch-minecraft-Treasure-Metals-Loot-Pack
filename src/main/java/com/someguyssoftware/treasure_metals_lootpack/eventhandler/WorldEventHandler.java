@@ -36,7 +36,12 @@ public class WorldEventHandler {
 
 	@SubscribeEvent(priority = EventPriority.LOW)
 	public void onWorldLoad(WorldEvent.Load event) {
-		Treasure.logger.debug("Loading world event...");
+        Treasure.logger.debug("[TMLP] Loading world event...");
+        
+        if (!getMod().getConfig().isModEnabled()) {
+			return;
+        }
+        
 		/*
 		 * On load of dimension 0 (overworld), initialize the loot table's context and other static loot tables
 		 */

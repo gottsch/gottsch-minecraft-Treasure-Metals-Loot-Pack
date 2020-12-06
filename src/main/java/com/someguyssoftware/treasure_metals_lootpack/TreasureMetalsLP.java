@@ -77,12 +77,12 @@ public class TreasureMetalsLP extends AbstractMod {
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-//		if (!getConfig().isModEnabled()) {
-//			return;
-//		}
+		if (!getConfig().isModEnabled()) {
+			return;
+		}
 
 		// perform any post init
-//		super.postInit(event);
+		super.postInit(event);
 	}
 	
 	/*

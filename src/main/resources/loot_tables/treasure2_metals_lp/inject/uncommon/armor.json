@@ -11,52 +11,52 @@
 			"bonus_rolls": 0.5,
 			"entries": [
 				{
-					"entryName": "bone_steel_chestplate",
+					"entryName": "bone_chestplate",
 					"type": "item",
-					"name": "sgs_metals:bone_steel_chestplate",
+					"name": "sgs_metals:bone_chestplate",
 					"weight": 8
 				},
 				{
-					"entryName": "bone_steel_leggings",
+					"entryName": "bone_leggings",
 					"type": "item",
-					"name": "sgs_metals:bone_steel_leggings",
+					"name": "sgs_metals:bone_leggings",
 					"weight": 10				
 				},
 				{
-					"entryName": "bone_steel_helmet",
+					"entryName": "bone_helmet",
 					"type": "item",
-					"name": "sgs_metals:bone_steel_helmet",
-					"weight": 10			
+					"name": "sgs_metals:bone_helmet",
+					"weight": 12	
 				},
 				{
-					"entryName": "bone_steel_boots",
+					"entryName": "bone_boots",
 					"type": "item",
-					"name": "sgs_metals:bone_steel_boots",
+					"name": "sgs_metals:bone_boots",
 					"weight": 10				
 				},
 				{
 					"entryName": "steel_chestplate",
 					"type": "item",
 					"name": "sgs_metals:steel_chestplate",
-					"weight": 8
+					"weight": 2
 				},
 				{
 					"entryName": "steel_leggings",
 					"type": "item",
 					"name": "sgs_metals:steel_leggings",
-					"weight": 10			
+					"weight": 6			
 				},
 				{
 					"entryName": "steel_helmet",
 					"type": "item",
 					"name": "sgs_metals:steel_helmet",
-					"weight": 10			
+					"weight": 8			
 				},
 				{
 					"entryName": "steel_boots",
 					"type": "item",
 					"name": "sgs_metals:steel_boots",
-					"weight": 10				
+					"weight": 6				
 				}
 			]
 		}

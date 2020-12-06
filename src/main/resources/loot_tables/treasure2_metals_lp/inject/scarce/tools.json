@@ -1,6 +1,6 @@
 {
 	"version": "1.0",
-	"categories": ["tools"],
+	"categories": ["general"],
 	"pools": [
 		{
 			"name": "sgs_metals_scarce_tools",
