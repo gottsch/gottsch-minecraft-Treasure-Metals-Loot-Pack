@@ -3,8 +3,8 @@
     "categories": ["general"],
 	"pools": [
 		{
-            "name": "sgs_metals_rare_tools",
-            "rolls": {
+        "name": "sgs_metals_rare_tools",
+        "rolls": {
 				"min": 2,
 				"max": 3
 			},
@@ -23,7 +23,7 @@
 					"weight": 15
 				},
 				{
-					"entryName": "titanium_sword",
+					"entryName": "greater_titanium_sword",
 					"type": "item",
 					"name": "sgs_metals:titanium_sword",
 					"weight": 13,
@@ -34,7 +34,7 @@
 					]
 				},
 				{
-					"entryName": "autium_sword",
+					"entryName": "greater_autium_sword",
 					"type": "item",
 					"name": "sgs_metals:autium_sword",
 					"weight": 5,

@@ -30,7 +30,7 @@
 					]
 				},
 				{
-					"entryName": "titanium_sword",
+					"entryName": "greater_titanium_sword",
 					"type": "item",
 					"name": "sgs_metals:titanium_sword",
 					"weight": 5,
@@ -39,8 +39,8 @@
 							"function": "enchant_with_levels",
 							"levels": 30,
 							"treasure": true
-						}					
-					]	
+						}
+					]
 				},
 				{
 					"entryName": "autium_sword",
@@ -52,8 +52,8 @@
 							"function": "enchant_with_levels",
 							"levels": 30,
 							"treasure": true
-						}				
-					]						
+						}
+					]
 				}
 			]
 		}
