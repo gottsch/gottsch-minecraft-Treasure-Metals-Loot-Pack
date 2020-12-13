@@ -28,7 +28,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = TreasureMetalsLP.MODID, 
 name = TreasureMetalsLP.NAME, 
 version = TreasureMetalsLP.VERSION, 
-dependencies = "required-after:gottschcore@[1.13.0,);required-after:treasure2@[1.13.1,);required-after:sgs_metals@[3.0.3,)", 
+dependencies = "required-after:gottschcore@[1.13.0,);required-after:treasure2@[1.14.0,);required-after:sgs_metals@[3.0.3,)", 
 acceptedMinecraftVersions = "[1.12.2]", 
 updateJSON = TreasureMetalsLP.UPDATE_JSON_URL)
 @Credits(values = { "Treasure2: Metals Loot Pack was first developed by Mark Gottschling on Dec 3, 2020."})

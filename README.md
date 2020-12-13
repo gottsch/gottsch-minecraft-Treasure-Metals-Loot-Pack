@@ -1,2 +1,2 @@
 # gottsch-minecraft-Treasure-Metals-Loot-Pack
-An addon of Metails! Loot items for Treasure2!
+An addon of Metals! loot items for Treasure2!
