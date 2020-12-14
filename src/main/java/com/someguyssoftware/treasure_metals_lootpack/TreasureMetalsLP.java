@@ -11,27 +11,34 @@ import com.someguyssoftware.gottschcore.config.IConfig;
 import com.someguyssoftware.gottschcore.mod.AbstractMod;
 import com.someguyssoftware.gottschcore.mod.IMod;
 import com.someguyssoftware.gottschcore.version.BuildVersion;
-import com.someguyssoftware.treasure2.eventhandler.WorldEventHandler;
+import com.someguyssoftware.treasure_metals_lootpack.config.ModConfig;
+import com.someguyssoftware.treasure_metals_lootpack.eventhandler.WorldEventHandler;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 /**
  * @author Mark Gottschling on Dec 3, 2020
  *
  */
-@Mod(modid = ModApp.MODID, name = ModApp.NAME, version = ModApp.VERSION, dependencies = "required-after:gottschcore@[1.13.0,)", acceptedMinecraftVersions = "[1.12.2]", updateJSON = ModApp.UPDATE_JSON_URL)
+@Mod(modid = TreasureMetalsLP.MODID, 
+name = TreasureMetalsLP.NAME, 
+version = TreasureMetalsLP.VERSION, 
+dependencies = "required-after:gottschcore@[1.14.0,);required-after:treasure2@[1.14.0,);required-after:sgs_metals@[3.0.3,)", 
+acceptedMinecraftVersions = "[1.12.2]", 
+updateJSON = TreasureMetalsLP.UPDATE_JSON_URL)
 @Credits(values = { "Treasure2: Metals Loot Pack was first developed by Mark Gottschling on Dec 3, 2020."})
-public class ModApp extends AbstractMod {
+public class TreasureMetalsLP extends AbstractMod {
 	// constants
 	public static final String MODID = "treasure2_metals_lp";
-	protected static final String NAME = "Treasure2 Metals LP";
+	protected static final String NAME = "Treasure2MetalsLP";
 	protected static final String VERSION = "1.0.0";
 
-	public static final String UPDATE_JSON_URL = "https://raw.githubusercontent.com/gottsch/gottsch-minecraft-Treasure/master/update.json";
+	public static final String UPDATE_JSON_URL = "https://raw.githubusercontent.com/gottsch/gottsch-minecraft-Treasure-Metals-Loot-Pack/1.12.2-master/update.json";
 
 	private static final BuildVersion MINECRAFT_VERSION = new BuildVersion(1, 12, 2);
 
@@ -39,18 +46,18 @@ public class ModApp extends AbstractMod {
 	private static BuildVersion latestVersion;
 
 	// logger
-	public static Logger LOGGER = LogManager.getLogger(ModApp.NAME);
+	public static Logger LOGGER = LogManager.getLogger(TreasureMetalsLP.NAME);
 
-	@Instance(value = ModApp.MODID)
-	public static ModApp instance;
-	
+	@Instance(value = TreasureMetalsLP.MODID)
+	public static TreasureMetalsLP instance;
+
 	/**
 	 * 
 	 */
-	public ModApp() {
-		
+	public TreasureMetalsLP() {
+
 	}
-	
+
 	/**
 	 * 
 	 * @param event
@@ -59,9 +66,19 @@ public class ModApp extends AbstractMod {
 	@EventHandler
 	public void preInt(FMLPreInitializationEvent event) {
 		super.preInt(event);
-		
+
 		// register additional events
 		MinecraftForge.EVENT_BUS.register(new WorldEventHandler(getInstance()));
+	}
+
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event) {
+		if (!getConfig().isModEnabled()) {
+			return;
+		}
+
+		// perform any post init
+		super.postInit(event);
 	}
 	
 	/*
@@ -71,7 +88,7 @@ public class ModApp extends AbstractMod {
 	 */
 	@Override
 	public IConfig getConfig() {
-		return null;
+		return ModConfig.instance;
 	}
 
 	/*
@@ -81,7 +98,7 @@ public class ModApp extends AbstractMod {
 	 */
 	@Override
 	public BuildVersion getMinecraftVersion() {
-		return ModApp.MINECRAFT_VERSION;
+		return TreasureMetalsLP.MINECRAFT_VERSION;
 	}
 
 	/*
@@ -101,7 +118,7 @@ public class ModApp extends AbstractMod {
 	 */
 	@Override
 	public String getName() {
-		return ModApp.NAME;
+		return TreasureMetalsLP.NAME;
 	}
 
 	/*
@@ -111,7 +128,7 @@ public class ModApp extends AbstractMod {
 	 */
 	@Override
 	public String getId() {
-		return ModApp.MODID;
+		return TreasureMetalsLP.MODID;
 	}
 
 	/*
@@ -121,7 +138,7 @@ public class ModApp extends AbstractMod {
 	 */
 	@Override
 	public IMod getInstance() {
-		return ModApp.instance;
+		return TreasureMetalsLP.instance;
 	}
 
 	/*
@@ -131,7 +148,7 @@ public class ModApp extends AbstractMod {
 	 */
 	@Override
 	public String getVersion() {
-		return ModApp.VERSION;
+		return TreasureMetalsLP.VERSION;
 	}
 
 	@Override
@@ -141,11 +158,11 @@ public class ModApp extends AbstractMod {
 
 	@Override
 	public void setModLatestVersion(BuildVersion version) {
-		ModApp.latestVersion = version;
+		TreasureMetalsLP.latestVersion = version;
 	}
 
 	@Override
 	public String getUpdateURL() {
-		return ModApp.UPDATE_JSON_URL;
+		return TreasureMetalsLP.UPDATE_JSON_URL;
 	}
 }
